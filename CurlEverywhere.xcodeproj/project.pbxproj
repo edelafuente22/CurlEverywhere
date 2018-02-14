@@ -15,8 +15,7 @@
 		7E9DC1A92024148200C5BDAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9DC1A72024148200C5BDAB /* LaunchScreen.storyboard */; };
 		7E9DC1B42024148200C5BDAB /* CurlEverywhereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DC1B32024148200C5BDAB /* CurlEverywhereTests.swift */; };
 		7E9DC1BF2024148200C5BDAB /* CurlEverywhereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DC1BE2024148200C5BDAB /* CurlEverywhereUITests.swift */; };
-		7E9DC1CD202415C300C5BDAB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DC1CC202415C300C5BDAB /* CameraViewController.swift */; };
-		7E9DC1CF202524FC00C5BDAB /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DC1CE202524FC00C5BDAB /* CameraController.swift */; };
+		7EFBCEFE2033B2D70091F93C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFBCEFD2033B2D70091F93C /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +50,7 @@
 		7E9DC1BA2024148200C5BDAB /* CurlEverywhereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurlEverywhereUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9DC1BE2024148200C5BDAB /* CurlEverywhereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurlEverywhereUITests.swift; sourceTree = "<group>"; };
 		7E9DC1C02024148200C5BDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E9DC1CC202415C300C5BDAB /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		7E9DC1CE202524FC00C5BDAB /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		7EFBCEFD2033B2D70091F93C /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +103,8 @@
 			children = (
 				7E9DC19B2024148200C5BDAB /* AppDelegate.swift */,
 				7E9DC19D2024148200C5BDAB /* MainViewController.swift */,
+				7EFBCEFD2033B2D70091F93C /* EditViewController.swift */,
 				7E9DC19F2024148200C5BDAB /* Main.storyboard */,
-				7E9DC1CE202524FC00C5BDAB /* CameraController.swift */,
-				7E9DC1CC202415C300C5BDAB /* CameraViewController.swift */,
 				7E9DC1A52024148200C5BDAB /* Assets.xcassets */,
 				7E9DC1A72024148200C5BDAB /* LaunchScreen.storyboard */,
 				7E9DC1AA2024148200C5BDAB /* Info.plist */,
@@ -268,11 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFBCEFE2033B2D70091F93C /* EditViewController.swift in Sources */,
 				7E9DC1A42024148200C5BDAB /* CurlEverywhere.xcdatamodeld in Sources */,
-				7E9DC1CD202415C300C5BDAB /* CameraViewController.swift in Sources */,
 				7E9DC19E2024148200C5BDAB /* MainViewController.swift in Sources */,
 				7E9DC19C2024148200C5BDAB /* AppDelegate.swift in Sources */,
-				7E9DC1CF202524FC00C5BDAB /* CameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

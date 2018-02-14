@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CurlEverywhere2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7E9DC1972024148200C5BDAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E9DC1AE2024148200C5BDAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E9DC1B92024148200C5BDAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
