@@ -101,12 +101,8 @@
 		7E9DC19A2024148200C5BDAB /* CurlEverywhere */ = {
 			isa = PBXGroup;
 			children = (
-				7E9DC19B2024148200C5BDAB /* AppDelegate.swift */,
-				7E9DC19D2024148200C5BDAB /* MainViewController.swift */,
-				7EFBCEFD2033B2D70091F93C /* EditViewController.swift */,
-				7E9DC19F2024148200C5BDAB /* Main.storyboard */,
-				7E9DC1A52024148200C5BDAB /* Assets.xcassets */,
-				7E9DC1A72024148200C5BDAB /* LaunchScreen.storyboard */,
+				7EC847762033F36F00E30079 /* Controller */,
+				7EC847752033F33100E30079 /* View */,
 				7E9DC1AA2024148200C5BDAB /* Info.plist */,
 				7E9DC1A22024148200C5BDAB /* CurlEverywhere.xcdatamodeld */,
 			);
@@ -129,6 +125,26 @@
 				7E9DC1C02024148200C5BDAB /* Info.plist */,
 			);
 			path = CurlEverywhereUITests;
+			sourceTree = "<group>";
+		};
+		7EC847752033F33100E30079 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E9DC19F2024148200C5BDAB /* Main.storyboard */,
+				7E9DC1A72024148200C5BDAB /* LaunchScreen.storyboard */,
+				7E9DC1A52024148200C5BDAB /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7EC847762033F36F00E30079 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E9DC19B2024148200C5BDAB /* AppDelegate.swift */,
+				7E9DC19D2024148200C5BDAB /* MainViewController.swift */,
+				7EFBCEFD2033B2D70091F93C /* EditViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

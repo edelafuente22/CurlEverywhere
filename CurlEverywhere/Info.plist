@@ -8,8 +8,12 @@
 	<string>For taking photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>For editing photos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>To save edited photos</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
