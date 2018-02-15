@@ -119,12 +119,16 @@
                                     <action selector="saveButtonPressed:" destination="DT3-uL-Jb7" eventType="touchUpInside" id="EbE-Gi-l72"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="curlingstone" highlightedImage="curlingstone" highlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcB-oX-1DW">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="curlingstone" translatesAutoresizingMaskIntoConstraints="NO" id="bcB-oX-1DW">
                                 <rect key="frame" x="126" y="502" width="122" height="102"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="6Tx-vF-nCV"/>
                                     <constraint firstAttribute="width" constant="122" id="eRk-ba-Iuh"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ICw-8t-JK7" appends="YES" id="rbT-wZ-JK8"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,11 +140,16 @@
                     </toolbarItems>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="curlingStone" destination="bcB-oX-1DW" id="Uke-8G-sIJ"/>
+                        <outlet property="curlingStone" destination="bcB-oX-1DW" id="11n-VA-EBp"/>
                         <outlet property="selectedImage" destination="pK0-qB-P7q" id="ZVt-fJ-lub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlm-tn-5Cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="ICw-8t-JK7">
+                    <connections>
+                        <action selector="scaleCurlingStone:" destination="DT3-uL-Jb7" id="MAj-6A-nLs"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1693.5999999999999" y="32.833583208395808"/>
         </scene>

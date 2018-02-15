@@ -20,6 +20,10 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBOutlet weak var curlingStone: UIImageView!
+    @IBAction func scaleCurlingStone(_ sender: UIPinchGestureRecognizer) {
+        curlingStone.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
+    }
+    
     
     var location = CGPoint(x: 126, y: 521)
     
@@ -34,6 +38,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         location = touch.location(in: self.view)
         curlingStone.center = location
     }
+    
+    
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         saveImage(top: curlingStone.image!, bottom: imageToEdit, newSize: CGSize(width: 122, height: 102))
@@ -57,7 +63,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         } else {
-            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Saved!", message: "Your new image has been saved to your photos.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         }
