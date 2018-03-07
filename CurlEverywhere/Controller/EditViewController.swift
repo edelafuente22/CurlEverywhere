@@ -39,13 +39,11 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         curlingStone.center = location
     }
     
-    
-    
     @IBAction func saveButtonPressed(_ sender: Any) {
         saveImage(top: curlingStone.image!, bottom: imageToEdit, newSize: CGSize(width: 122, height: 102))
         UIImageWriteToSavedPhotosAlbum(newImage!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +51,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pickerView.delegate = self
         selectedImage.image = imageToEdit
 
-        curlingStone.center = CGPoint(x: 126, y: 521)
+        curlingStone.center = CGPoint.zero
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {

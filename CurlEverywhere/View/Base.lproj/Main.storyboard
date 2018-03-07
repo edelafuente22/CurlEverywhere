@@ -109,6 +109,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="veb-dQ-Tbf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-j3-cLh">
                                 <rect key="frame" x="16" y="617" width="46" height="30"/>
@@ -177,5 +180,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="f93-F0-plv"/>
+        <segue reference="veb-dQ-Tbf"/>
     </inferredMetricsTieBreakers>
 </document>
