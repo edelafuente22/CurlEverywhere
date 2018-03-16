@@ -26,6 +26,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     var location = CGPoint(x: 126, y: 521)
+    var stoneStart = CGPoint(x: 126, y: 502)
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch : UITouch! = touches.first! as UITouch
@@ -51,7 +52,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pickerView.delegate = self
         selectedImage.image = imageToEdit
 
-        curlingStone.center = CGPoint.zero
+        curlingStone.center = stoneStart
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
