@@ -40,7 +40,6 @@
                                 </state>
                                 <connections>
                                     <action selector="clickOnCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O2W-kJ-wh5"/>
-                                    <segue destination="DT3-uL-Jb7" kind="show" identifier="Edit Taken Photo" id="0v8-vm-N8R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YA8-I5-CsQ">
@@ -53,7 +52,6 @@
                                 </state>
                                 <connections>
                                     <action selector="clickOnGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ra-e8-6gP"/>
-                                    <segue destination="DT3-uL-Jb7" kind="show" identifier="Edit Chosen Photo" id="f93-F0-plv"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frq-C3-IRs">
@@ -79,6 +77,8 @@
                     <navigationItem key="navigationItem" id="Dcw-vf-zUs"/>
                     <connections>
                         <outlet property="imageView" destination="frq-C3-IRs" id="9Wn-eH-AkH"/>
+                        <segue destination="DT3-uL-Jb7" kind="show" identifier="Edit Taken Photo" id="fpw-63-TUo"/>
+                        <segue destination="DT3-uL-Jb7" kind="show" identifier="Edit Chosen Photo" id="J9P-hr-8QT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -122,7 +122,7 @@
                                     <action selector="saveButtonPressed:" destination="DT3-uL-Jb7" eventType="touchUpInside" id="EbE-Gi-l72"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="curlingstone" translatesAutoresizingMaskIntoConstraints="NO" id="bcB-oX-1DW">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curlingstone" translatesAutoresizingMaskIntoConstraints="NO" id="bcB-oX-1DW">
                                 <rect key="frame" x="126" y="502" width="122" height="102"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -135,6 +135,11 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fFn-8c-ksr" firstAttribute="bottom" secondItem="bcB-oX-1DW" secondAttribute="bottom" constant="63" id="COC-OQ-zl2"/>
+                            <constraint firstItem="bcB-oX-1DW" firstAttribute="leading" secondItem="fFn-8c-ksr" secondAttribute="leading" constant="126" id="W37-2T-Hoq"/>
+                            <constraint firstItem="fFn-8c-ksr" firstAttribute="trailing" secondItem="bcB-oX-1DW" secondAttribute="trailing" constant="127" id="wi5-VM-2cT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fFn-8c-ksr"/>
                     </view>
                     <toolbarItems>
@@ -179,7 +184,7 @@
         <image name="hollywoodcurling" width="1825" height="1825"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f93-F0-plv"/>
+        <segue reference="J9P-hr-8QT"/>
         <segue reference="veb-dQ-Tbf"/>
     </inferredMetricsTieBreakers>
 </document>

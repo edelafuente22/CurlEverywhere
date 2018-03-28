@@ -12,21 +12,24 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var imageToEdit: UIImage!
     var newImage: UIImage!
+    
+    var location = CGPoint(x: 0, y: 0)
+    var stoneSize = CGSize(width: 122, height: 102)
+    
     @IBOutlet weak var selectedImage: UIImageView! {
         didSet {
-            selectedImage.layer.borderColor = UIColor.yellow.cgColor
-            selectedImage.layer.borderWidth = 0.5
+            selectedImage.layer.borderColor = UIColor.black.cgColor
+            selectedImage.layer.borderWidth = 0.1
         }
     }
     
     @IBOutlet weak var curlingStone: UIImageView!
     @IBAction func scaleCurlingStone(_ sender: UIPinchGestureRecognizer) {
         curlingStone.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
+        let newWidth = self.view.frame.size.width
+        let newHeight = self.view.frame.size.height
+        stoneSize = CGSize(width: newWidth, height: newHeight)
     }
-    
-    
-    var location = CGPoint(x: 126, y: 521)
-    var stoneStart = CGPoint(x: 126, y: 502)
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch : UITouch! = touches.first! as UITouch
@@ -41,7 +44,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        saveImage(top: curlingStone.image!, bottom: imageToEdit, newSize: CGSize(width: 122, height: 102))
+        saveImage(top: curlingStone.image!, bottom: imageToEdit, newSize: CGSize(width: 640, height: 640))
         UIImageWriteToSavedPhotosAlbum(newImage!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
 
@@ -51,18 +54,15 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let pickerView = UIImagePickerController()
         pickerView.delegate = self
         selectedImage.image = imageToEdit
-
-        curlingStone.center = stoneStart
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
-            // we got back an error!
             let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         } else {
-            let ac = UIAlertController(title: "Saved!", message: "Your new image has been saved to your photos.", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Saved!", message: "You can find your new image in your photo album.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         }
@@ -73,7 +73,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         // draw images to context
         bottom.draw(in: CGRect(origin: CGPoint.zero, size: newSize))
-        top.draw(in: CGRect(origin: CGPoint.zero, size: newSize))
+        top.draw(in: CGRect(origin: location, size: stoneSize))
         // return the new image
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -81,19 +81,6 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         return newImage
     }
     
-//    func saveImage() {
-//        let bottomImage = UIImage(named: "imageToEdit")!
-//        let topImage = UIImage(named: "curlingstone")!
-//
-//        let newSize = CGSize // set this to what you need
-//        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-//
-//        bottomImage.draw(in: CGRect(origin: CGPoint.zero, size: newSize))//As drawInRect is deprecated
-//        topImage.draw(at: CGRect(origin: CGPoint.zero, size: newSize))//As drawInRect is deprecated
-//
-//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
