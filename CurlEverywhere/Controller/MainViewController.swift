@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    private var chosenImage: UIImage!
+    var chosenImage: UIImage!
     
     @IBOutlet weak var imageView: UIImageView!
     

@@ -148,6 +148,7 @@
                     </toolbarItems>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="lwG-Z5-CPP" id="2Aa-gg-Ted"/>
                         <outlet property="curlingStone" destination="bcB-oX-1DW" id="11n-VA-EBp"/>
                         <outlet property="selectedImage" destination="pK0-qB-P7q" id="ZVt-fJ-lub"/>
                     </connections>

@@ -13,8 +13,10 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var imageToEdit: UIImage!
     var newImage: UIImage!
     
-    var location = CGPoint(x: 0, y: 0)
+    var location = CGPoint.zero
     var stoneSize = CGSize(width: 122, height: 102)
+    
+    @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var selectedImage: UIImageView! {
         didSet {
@@ -44,8 +46,9 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        saveImage(top: curlingStone.image!, bottom: imageToEdit, newSize: CGSize(width: 640, height: 640))
+        saveImage(top: curlingStone.image!, bottom: imageToEdit, newSize: CGSize(width: 450, height: 450))
         UIImageWriteToSavedPhotosAlbum(newImage!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        cancelButton.setTitle("Done", for: UIControlState.normal)
     }
 
     
