@@ -13,6 +13,10 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var imageToEdit: UIImage!
     var newImage: UIImage!
     
+    var imageWidth: CGFloat = 0
+    var imageHeight: CGFloat = 0
+    var imageSize = CGSize(width: 0, height: 0)
+    
     var location = CGPoint.zero
     var stoneSize = CGSize(width: 122, height: 102)
     
@@ -20,12 +24,16 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var selectedImage: UIImageView! {
         didSet {
-            selectedImage.layer.borderColor = UIColor.black.cgColor
-            selectedImage.layer.borderWidth = 0.1
+//            selectedImage.layer.borderColor = UIColor.black.cgColor
+//            selectedImage.layer.borderWidth = 0.1
+            imageWidth = selectedImage.frame.width
+            imageHeight = selectedImage.frame.height
+            imageSize = CGSize(width: imageWidth, height: imageHeight)
         }
     }
     
     @IBOutlet weak var curlingStone: UIImageView!
+    
     @IBAction func scaleCurlingStone(_ sender: UIPinchGestureRecognizer) {
         curlingStone.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
         let newWidth = self.view.frame.size.width
@@ -46,7 +54,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        saveImage(top: curlingStone.image!, bottom: imageToEdit, newSize: CGSize(width: 450, height: 450))
+        self.saveImage(top: curlingStone.image!, bottom: imageToEdit, newSize: imageSize)
         UIImageWriteToSavedPhotosAlbum(newImage!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
         cancelButton.setTitle("Done", for: UIControlState.normal)
     }
@@ -71,11 +79,12 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
+    @discardableResult
     func saveImage(top: UIImage, bottom: UIImage, newSize: CGSize) -> UIImage? {
         // begin context with new size
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         // draw images to context
-        bottom.draw(in: CGRect(origin: CGPoint.zero, size: newSize))
+        bottom.draw(in: CGRect(origin: CGPoint.zero, size: imageSize))
         top.draw(in: CGRect(origin: location, size: stoneSize))
         // return the new image
         newImage = UIGraphicsGetImageFromCurrentImageContext()
